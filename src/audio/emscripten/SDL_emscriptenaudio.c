@@ -231,7 +231,9 @@ EMSCRIPTENAUDIO_CloseDevice(_THIS)
             SDL2.audio = undefined;
         }
         if ((SDL2.audioContext !== undefined) && (SDL2.audio === undefined) && (SDL2.capture === undefined)) {
-            SDL2.audioContext.close();
+            if ((SDL2.audioContext.close !== undefined) {
+                SDL2.audioContext.close();
+            }
             SDL2.audioContext = undefined;
         }
     }, this->iscapture);
